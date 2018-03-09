@@ -36,7 +36,7 @@ sudo add-apt-repository ppa:fish-shell/release-2 -y
 sudo apt-get update -y
 
 # install various tools
-sudo apt-get install git alsa-utils enpass unzip vim tree rxvt-unicode chromium-browser fish -y
+sudo apt-get install curl git alsa-utils enpass unzip vim tree rxvt-unicode chromium-browser fish -y
 
 sudo apt-get install i3 feh scrot conky-all xinit x11-xserver-utils -y
 
