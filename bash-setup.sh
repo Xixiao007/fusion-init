@@ -13,8 +13,8 @@ chmod og-rw ${home_path}/.ssh/id_rsa
 git clone git@github.com:Xixiao007/dotfiles-mac-vagrant-ubuntu.git ${home_path}/dotfiles
 ${home_path}/dotfiles/bootstrap.sh -f
 
-# for fish
-/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2017.01.02_all.deb keyring.deb SHA256:4c3c6685b1181d83efe3a479c5ae38a2a44e23add55e16a328b8c8560bf05e5f
+# for i3
+/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2018.01.30_all.deb keyring.deb SHA256:baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a
 sudo dpkg -i ./keyring.deb
 echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
 # for java8
