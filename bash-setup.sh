@@ -5,14 +5,14 @@ temp_path=${home_path}/temp
 mkdir -p ${home_path}/temp
 cd ${temp_path}
 
+# refresh sudo apt-get update
+sudo apt-get update -y
+sudo apt-get install software-properties-common -y
+
 # copy keys from host
 cp /mnt/hgfs/xixiao/.ssh/id_rsa ${home_path}/.ssh/
 cp /mnt/hgfs/xixiao/.ssh/id_rsa.pub ${home_path}/.ssh/
 chmod og-rw ${home_path}/.ssh/id_rsa
-
-# refresh sudo apt-get update
-sudo apt-get update -y
-sudo apt-get install software-properties-common -y
 
 # for java8
 sudo add-apt-repository ppa:webupd8team/java -y
