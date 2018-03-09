@@ -40,6 +40,10 @@ sudo apt-get install curl git alsa-utils enpass unzip vim tree rxvt-unicode chro
 
 sudo apt-get install i3 feh scrot conky-all xinit x11-xserver-utils -y
 
+# fish as default shell
+sudo usermod -s /usr/bin/fish ${username}
+
+
 # Consolas font
 # sudo apt-get install font-manager cabextract -y
 # set -e
@@ -61,41 +65,6 @@ ExecStart=
 ExecStart=-/sbin/agetty --noissue --autologin finxxi %I $TERM
 Type=idle' | sudo tee --append /etc/systemd/system/getty@tty1.service.d/override.conf
 
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
-/home/${username}/.fzf/install
-
-# enable new keybinding for fzf
-set -U FZF_LEGACY_KEYBINDINGS 0
-
-# fish post_actions
-fisher fzf
-fisher fnm
-fnm 8
-npm install sfdx-cli --global
-
-# oracle java8 - It is in post action because the license accept window cannot passed by in vagrant
-sudo add-apt-repository ppa:webupd8team/java -y
-sudo apt-get update -y
-sudo apt-get install oracle-java8-installer -y
-
-# ant
-# sudo apt-get install ant -y
-
-# salesforce migration tool v41.0 send to projects folder TO-DO: put to path not working
-# wget -q Download https://gs0.salesforce.com/dwnld/SfdcAnt/salesforce_ant_41.0.zip
-# unzip salesforce_ant_41.0.zip
-# mv ant-salesforce.jar /home/vagrant/projects/
-# sudo mv ant-salesforce.jar /usr/local/bin
-
-# clean
-rm -Rf Documents Music Pictures Public Templates Videos
-rm -rf /home/${username}/temp
-
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
-/home/${username}/.fzf/install
-
 # enable new keybinding for fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
 
@@ -110,20 +79,12 @@ wget -O vscode.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
 sudo apt-get install vscode.deb -y
 code --install-extension Shan.code-settings-sync
 
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
+/home/${username}/.fzf/install
+
 # oracle java8 - It is in post action because the license accept window cannot passed by in vagrant
 sudo apt-get install oracle-java8-installer -y
-
-# fish as default shell
-sudo usermod -s /usr/bin/fish ${username}
-
-# ant
-# sudo apt-get install ant -y
-
-# salesforce migration tool v41.0 send to projects folder TO-DO: put to path not working
-# wget -q Download https://gs0.salesforce.com/dwnld/SfdcAnt/salesforce_ant_41.0.zip
-# unzip salesforce_ant_41.0.zip
-# mv ant-salesforce.jar /home/vagrant/projects/
-# sudo mv ant-salesforce.jar /usr/local/bin
 
 # cleaning folders
 cd ${home_path}
