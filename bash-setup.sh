@@ -5,17 +5,17 @@ temp_path=${home_path}/temp
 mkdir -p ${home_path}/temp
 cd ${temp_path}
 
+# copy keys from host
+cp /mnt/hgfs/xixiao/.ssh/id_rsa ${home_path}/.ssh/
+cp /mnt/hgfs/xixiao/.ssh/id_rsa.pub ${home_path}/.ssh/
+chmod og-rw ${home_path}/.ssh/id_rsa
+
 # refresh sudo apt-get update
 sudo apt-get update -y
 sudo apt-get install software-properties-common -y
 
 # for java8
 sudo add-apt-repository ppa:webupd8team/java -y
-
-# copy keys from host
-cp /mnt/hgfs/xixiao/.ssh/id_rsa ${home_path}/.ssh/id_rsa
-cp /mnt/hgfs/xixiao/.ssh/id_rsa.pub ${home_path}/.ssh/id_rsa.pub
-chmod og-rw ${home_path}/.ssh/id_rsa
 
 # for i3
 /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2018.01.30_all.deb keyring.deb SHA256:baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a
