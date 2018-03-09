@@ -1,5 +1,6 @@
 # preparation
-home_path=/home/finxxi
+username=finxxi
+home_path=/home/${username}
 temp_path=${home_path}/temp
 mkdir -p ${home_path}/temp
 cd ${temp_path}
@@ -45,9 +46,6 @@ cabextract ppviewer.cab
 mkdir ${home_path}/.fonts
 mv CONSOL* ${home_path}/.fonts
 fc-cache -f -v
-
-# fish as default shell
-sudo usermod -s /usr/bin/fish vagrant
 
 # fishman
 curl -Lo ${home_path}/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
@@ -110,6 +108,9 @@ code --install-extension Shan.code-settings-sync
 
 # oracle java8 - It is in post action because the license accept window cannot passed by in vagrant
 sudo apt-get install oracle-java8-installer -y
+
+# fish as default shell
+sudo usermod -s /usr/bin/fish ${username}
 
 # ant
 # sudo apt-get install ant -y
