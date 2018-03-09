@@ -41,15 +41,15 @@ sudo apt-get install curl git alsa-utils enpass unzip vim tree rxvt-unicode chro
 sudo apt-get install i3 feh scrot conky-all xinit x11-xserver-utils -y
 
 # Consolas font
-sudo apt-get install font-manager cabextract -y
-set -e
-set -x
-wget -q http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
-cabextract -L -F ppviewer.cab PowerPointViewer.exe
-cabextract ppviewer.cab
-mkdir ${home_path}/.fonts
-mv CONSOL* ${home_path}/.fonts
-fc-cache -f -v
+# sudo apt-get install font-manager cabextract -y
+# set -e
+# set -x
+# wget -q http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
+# cabextract -L -F ppviewer.cab PowerPointViewer.exe
+# cabextract ppviewer.cab
+# mkdir ${home_path}/.fonts
+# mv CONSOL* ${home_path}/.fonts
+# fc-cache -f -v
 
 # fishman
 curl -Lo ${home_path}/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
