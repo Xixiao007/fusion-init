@@ -5,6 +5,8 @@ temp_path=${home_path}/temp
 mkdir -p ${home_path}/temp
 cd ${temp_path}
 
+# refresh sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install software-properties-common -y
 
 # for java8
