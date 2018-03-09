@@ -62,8 +62,8 @@ ExecStart=-/sbin/agetty --noissue --autologin finxxi %I $TERM
 Type=idle' | sudo tee --append /etc/systemd/system/getty@tty1.service.d/override.conf
 
 # fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/vagrant/.fzf
-/home/vagrant/.fzf/install
+git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
+/home/${username}/.fzf/install
 
 # enable new keybinding for fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
@@ -90,11 +90,11 @@ sudo apt-get install oracle-java8-installer -y
 
 # clean
 rm -Rf Documents Music Pictures Public Templates Videos
-rm -rf /home/vagrant/temp
+rm -rf /home/${username}/temp
 
 # fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/vagrant/.fzf
-/home/vagrant/.fzf/install
+git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
+/home/${username}/.fzf/install
 
 # enable new keybinding for fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
