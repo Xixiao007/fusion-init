@@ -64,15 +64,6 @@ ExecStart=
 ExecStart=-/sbin/agetty --noissue --autologin '${username}' %I $TERM
 Type=idle' | sudo tee --append /etc/systemd/system/getty@tty1.service.d/override.conf
 
-# enable new keybinding for fzf
-set -U FZF_LEGACY_KEYBINDINGS 0
-
-# fish post_actions
-fisher fzf
-fisher fnm
-fnm 8
-npm install sfdx-cli --global
-
 # vscode
 wget -O vscode.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
 sudo apt-get install vscode.deb -y
@@ -84,6 +75,17 @@ git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
 
 # oracle java8 - It is in post action because the license accept window cannot passed by in vagrant
 sudo apt-get install oracle-java8-installer -y
+
+# enable new keybinding for fzf
+fish
+set -U FZF_LEGACY_KEYBINDINGS 0
+
+# fish post_actions
+fisher fzf
+fisher fnm
+fnm 8
+npm install sfdx-cli --global
+
 
 # cleaning folders
 cd ${home_path}
