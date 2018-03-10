@@ -41,7 +41,7 @@ sudo apt-get install curl alsa-utils enpass unzip vim tree rxvt-unicode fish -y
 sudo apt-get install i3 feh scrot conky-all xinit x11-xserver-utils -y
 
 # chrome
-sudo apt-get install libxss1 libappindicator1 libindicator7
+sudo apt-get install libxss1 libappindicator1 libindicator7 -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 sudo apt-get install -f
