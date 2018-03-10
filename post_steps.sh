@@ -3,9 +3,6 @@
 # preparation
 username=finxxi
 
-# vm tools
-sudo apt-get install open-vm-tools-desktop -y
-
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
 /home/${username}/.fzf/install
