@@ -56,6 +56,7 @@ Type=idle' | sudo tee --append /etc/systemd/system/getty@tty1.service.d/override
 
 # vscode
 wget -O vscode.deb "https://go.microsoft.com/fwlink/?LinkID=760868"
+sudo apt-get install libgtk2.0-0 libxss-dev libgconf-2-4 libasound2 -y
 sudo apt-get install ./vscode.deb -y
 code --install-extension Shan.code-settings-sync
 
