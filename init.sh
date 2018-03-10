@@ -37,8 +37,14 @@ sudo add-apt-repository ppa:fish-shell/release-2 -y
 sudo apt-get update -y
 
 # install various tools
-sudo apt-get install curl alsa-utils enpass unzip vim tree rxvt-unicode chromium-browser fish  -y
+sudo apt-get install curl alsa-utils enpass unzip vim tree rxvt-unicode fish -y
 sudo apt-get install i3 feh scrot conky-all xinit x11-xserver-utils -y
+
+# chrome
+sudo apt-get install libxss1 libappindicator1 libindicator7
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
+sudo apt-get install -f
 
 # fish as default shell
 sudo usermod -s /usr/bin/fish ${username}
