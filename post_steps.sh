@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # preparation
+hostusername=xixiao
 username=finxxi
 home_path=/home/${username}
 
@@ -12,8 +13,8 @@ sudo apt-get install open-vm-tools-desktop -y
 mkdir ${home_path}/Shared
 /usr/bin/vmhgfs-fuse -o auto_unmount .host:/ ${home_path}/Shared
 mkdir ${home_path}/.ssh
-cp ${home_path}/Shared/${username}/.ssh/id_rsa ${home_path}/.ssh/
-cp ${home_path}/Shared/${username}/.ssh/id_rsa.pub ${home_path}/.ssh/
+cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa ${home_path}/.ssh/
+cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa.pub ${home_path}/.ssh/
 chmod og-rw ${home_path}/.ssh/id_rsa
 
 # dotfiles
