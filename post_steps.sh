@@ -62,4 +62,4 @@ git remote add origin git@github.com:Xixiao007/dotfiles.git
 
 cd {$home_path}
 rm -Rf temp
-sudo reoobt
+sudo reboot
