@@ -51,5 +51,10 @@ fisher fnm
 fnm 8
 npm install sfdx-cli --global
 
+# change dotfies upstream
+cd {$home_path}/dotfiles
+git remote rm origin
+git remote add origin git@github.com:Xixiao007/dotfiles.git
+
 cd {$home_path}
 rm -Rf temp
