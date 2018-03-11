@@ -18,7 +18,7 @@ echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-relea
 
 # dotfiles
 echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ${home_path}/.ssh/config
-git clone https://github.com:Xixiao007/dotfiles.git ${home_path}/dotfiles
+git clone https://github.com/Xixiao007/dotfiles.git ${home_path}/dotfiles
 ${home_path}/dotfiles/bootstrap.sh -f
 
 # add enpass source
