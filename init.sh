@@ -9,9 +9,6 @@ cd ${temp_path}
 # refresh sudo apt-get update
 sudo apt-get update -y
 
-# vm tools
-sudo apt-get install open-vm-tools-desktop -y
-
 sudo apt-get install software-properties-common -y
 
 # for i3
