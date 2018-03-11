@@ -1,4 +1,5 @@
 # preparation
+hostusername=xixiao
 username=finxxi
 home_path=/home/${username}
 temp_path=${home_path}/temp
@@ -9,13 +10,16 @@ cd ${temp_path}
 sudo apt-get update -y
 
 # vm tools
-# sudo apt-get install open-vm-tools-desktop -y
+sudo apt-get install open-vm-tools-desktop -y
 
 sudo apt-get install software-properties-common -y
 
+mkdir ${home_path}/Shared
+/usr/bin/vmhgfs-fuse -o auto_unmount .host:/ ${home_path}/Shared
+
 # copy keys from host
-cp /mnt/hgfs/xixiao/.ssh/id_rsa ${home_path}/.ssh/
-cp /mnt/hgfs/xixiao/.ssh/id_rsa.pub ${home_path}/.ssh/
+cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa ${home_path}/.ssh/
+cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa.pub ${home_path}/.ssh/
 chmod og-rw ${home_path}/.ssh/id_rsa
 
 # for i3
