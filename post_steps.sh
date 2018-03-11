@@ -4,17 +4,6 @@
 username=finxxi
 home_path=/home/${username}
 
-# vm tools
-sudo apt-get install open-vm-tools-desktop -y
-
-# copy keys from host
-mkdir ${home_path}/Shared
-/usr/bin/vmhgfs-fuse -o auto_unmount .host:/ ${home_path}/Shared
-mkdir ${home_path}/.ssh
-cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa ${home_path}/.ssh/
-cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa.pub ${home_path}/.ssh/
-chmod og-rw ${home_path}/.ssh/id_rsa
-
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
 /home/${username}/.fzf/install
