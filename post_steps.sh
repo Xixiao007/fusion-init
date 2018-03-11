@@ -1,32 +1,32 @@
-#!/bin/bash
+#!/usr/bin/fish
 
 # preparation
-hostusername=xixiao
-username=finxxi
-home_path=/home/${username}
-temp_path=${home_path}/temp
-mkdir -p ${home_path}/temp
-cd ${temp_path}
+set hostusernam xixiao
+set username finxxi
+set home_path /home/{$username}
+set temp_path {$home_path}/temp
+mkdir -p {$home_path}/temp
+cd {$temp_path}
 
 # vm tools
 sudo apt-get install open-vm-tools-desktop -y
 
 # copy keys from host
-mkdir ${home_path}/Shared
-/usr/bin/vmhgfs-fuse -o auto_unmount .host:/ ${home_path}/Shared
-mkdir ${home_path}/.ssh
-cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa ${home_path}/.ssh/
-cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa.pub ${home_path}/.ssh/
-chmod og-rw ${home_path}/.ssh/id_rsa
+mkdir {$home_path}/Shared
+/usr/bin/vmhgfs-fuse -o auto_unmount .host:/ {$home_path}/Shared
+mkdir {$home_path}/.ssh
+cp {$home_path}/Shared/{$hostusername}/.ssh/id_rsa {$home_path}/.ssh/
+cp {$home_path}/Shared/{$hostusername}/.ssh/id_rsa.pub {$home_path}/.ssh/
+chmod og-rw {$home_path}/.ssh/id_rsa
 
 # dotfiles
-echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ${home_path}/.ssh/config
-git clone git@github.com:Xixiao007/dotfiles.git ${home_path}/dotfiles
-${home_path}/dotfiles/bootstrap.sh -f
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> {$home_path}/.ssh/config
+git clone git@github.com:Xixiao007/dotfiles.git {$home_path}/dotfiles
+{$home_path}/dotfiles/bootstrap.sh -f
 
 # fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/${username}/.fzf
-/home/${username}/.fzf/install
+git clone --depth 1 https://github.com/junegunn/fzf.git /home/{$username}/.fzf
+/home/{$username}/.fzf/install
 
 # for java8
 sudo add-apt-repository ppa:webupd8team/java -y
@@ -35,17 +35,14 @@ sudo apt-get install oracle-java8-installer -y
 
 # font Consolas
 sudo apt-get install font-manager cabextract -y
-set -e
-set -x
 wget -q http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
 cabextract -L -F ppviewer.cab PowerPointViewer.exe
 cabextract ppviewer.cab
-mkdir ${home_path}/.fonts
-mv CONSOL* ${home_path}/.fonts
+mkdir {$home_path}/.fonts
+mv CONSOL* {$home_path}/.fonts
 fc-cache -f -v
 
 # enable new keybinding for fzf
-fish
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 # fish post_actions
@@ -54,5 +51,5 @@ fisher fnm
 fnm 8
 npm install sfdx-cli --global
 
-cd ${home_path}
+cd {$home_path}
 rm -Rf temp
