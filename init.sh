@@ -49,7 +49,7 @@ sudo apt-get install i3 feh scrot conky-all xinit x11-xserver-utils -y
 sudo apt-get install libxss1 libappindicator1 libindicator7 -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
-sudo apt-get install -f
+sudo apt-get install -f -y
 
 # fish as default shell
 sudo usermod -s /usr/bin/fish ${username}
