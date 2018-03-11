@@ -1,7 +1,7 @@
 #!/usr/bin/fish
 
 # preparation
-set hostusernam xixiao
+set hostusername xixiao
 set username finxxi
 set home_path /home/{$username}
 set temp_path {$home_path}/temp
