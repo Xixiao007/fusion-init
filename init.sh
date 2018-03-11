@@ -27,7 +27,7 @@ chmod og-rw ${home_path}/.ssh/id_rsa
 
 # dotfiles
 echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ${home_path}/.ssh/config
-git clone git@github.com:Xixiao007/dotfiles.git ${home_path}/dotfiles
+git clone https://github.com:Xixiao007/dotfiles.git ${home_path}/dotfiles
 ${home_path}/dotfiles/bootstrap.sh -f
 
 # add enpass source
