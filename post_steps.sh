@@ -22,7 +22,7 @@ chmod og-rw {$home_path}/.ssh/id_rsa
 # dotfiles
 echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> {$home_path}/.ssh/config
 git clone git@github.com:Xixiao007/dotfiles.git {$home_path}/dotfiles
-{$home_path}/dotfiles/bootstrap.sh -f
+eval {$home_path}/dotfiles/bootstrap.sh -f
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git /home/{$username}/.fzf
