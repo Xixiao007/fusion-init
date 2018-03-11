@@ -6,11 +6,6 @@ temp_path=${home_path}/temp
 mkdir -p ${home_path}/temp
 cd ${temp_path}
 
-# for i3
-/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2018.01.30_all.deb keyring.deb SHA256:baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a
-sudo dpkg -i ./keyring.deb
-echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> sudo tee --append /etc/apt/sources.list.d/sur5r-i3.list
-
 # refresh sudo apt-get update
 sudo apt-get update -y
 
@@ -18,6 +13,11 @@ sudo apt-get update -y
 sudo apt-get install open-vm-tools-desktop -y
 
 sudo apt-get install software-properties-common -y
+
+# for i3
+/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2018.01.30_all.deb keyring.deb SHA256:baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a
+sudo dpkg -i ./keyring.deb
+echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> sudo tee --append /etc/apt/sources.list.d/sur5r-i3.list
 
 mkdir ${home_path}/Shared
 /usr/bin/vmhgfs-fuse -o auto_unmount .host:/ ${home_path}/Shared
