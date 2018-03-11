@@ -4,7 +4,9 @@
 hostusername=xixiao
 username=finxxi
 home_path=/home/${username}
-
+temp_path=${home_path}/temp
+mkdir -p ${home_path}/temp
+cd ${temp_path}
 
 # vm tools
 sudo apt-get install open-vm-tools-desktop -y
@@ -51,3 +53,6 @@ fisher fzf
 fisher fnm
 fnm 8
 npm install sfdx-cli --global
+
+cd ${home_path}
+rm -Rf temp
