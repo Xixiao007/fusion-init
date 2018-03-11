@@ -8,6 +8,10 @@ set temp_path {$home_path}/temp
 mkdir -p {$home_path}/temp
 cd {$temp_path}
 
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git /home/{$username}/.fzf
+/home/{$username}/.fzf/install
+
 # vm tools
 sudo apt-get install open-vm-tools-desktop -y
 
@@ -23,10 +27,6 @@ chmod og-rw {$home_path}/.ssh/id_rsa
 echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> {$home_path}/.ssh/config
 git clone git@github.com:Xixiao007/dotfiles.git {$home_path}/dotfiles
 eval {$home_path}/dotfiles/bootstrap.sh -f
-
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/{$username}/.fzf
-/home/{$username}/.fzf/install
 
 # for java8
 sudo add-apt-repository ppa:webupd8team/java -y
