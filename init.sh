@@ -16,22 +16,6 @@ sudo apt-get install software-properties-common -y
 sudo dpkg -i ./keyring.deb
 echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> sudo tee --append /etc/apt/sources.list.d/sur5r-i3.list
 
-# vm tools
-sudo apt-get install open-vm-tools-desktop -y
-
-# copy keys from host
-mkdir ${home_path}/Shared
-/usr/bin/vmhgfs-fuse -o auto_unmount .host:/ ${home_path}/Shared
-mkdir ${home_path}/.ssh
-cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa ${home_path}/.ssh/
-cp ${home_path}/Shared/${hostusername}/.ssh/id_rsa.pub ${home_path}/.ssh/
-chmod og-rw ${home_path}/.ssh/id_rsa
-
-# dotfiles
-echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ${home_path}/.ssh/config
-git clone git@github.com:Xixiao007/dotfiles.git ${home_path}/dotfiles
-${home_path}/dotfiles/bootstrap.sh -f
-
 # add enpass source
 echo "deb http://repo.sinew.in/ stable main" | sudo tee --append /etc/apt/sources.list.d/enpass.list
 wget -O - https://dl.sinew.in/keys/enpass-linux.key | sudo apt-key add -
