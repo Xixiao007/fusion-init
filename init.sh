@@ -35,6 +35,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 sudo apt-get install -f -y
 
+# fd
+wget https://github.com/sharkdp/fd/releases/download/v6.3.0/fd-musl_6.3.0_amd64.deb
+sudo dpkg -i fd-musl*.deb
+
 # fish as default shell
 sudo usermod -s /usr/bin/fish ${username}
 
