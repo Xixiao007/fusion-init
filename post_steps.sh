@@ -16,17 +16,17 @@ eval /home/{$username}/.fzf/install
 sudo apt-get install open-vm-tools-desktop -y
 
 # copy keys from host
-mkdir {$home_path}/Shared
-/usr/bin/vmhgfs-fuse -o auto_unmount .host:/ {$home_path}/Shared
-mkdir {$home_path}/.ssh
-cp {$home_path}/Shared/{$hostusername}/.ssh/id_rsa {$home_path}/.ssh/
-cp {$home_path}/Shared/{$hostusername}/.ssh/id_rsa.pub {$home_path}/.ssh/
-chmod og-rw {$home_path}/.ssh/id_rsa
+# mkdir {$home_path}/Shared
+# /usr/bin/vmhgfs-fuse -o auto_unmount .host:/ {$home_path}/Shared
+# mkdir {$home_path}/.ssh
+# cp {$home_path}/Shared/{$hostusername}/.ssh/id_rsa {$home_path}/.ssh/
+# cp {$home_path}/Shared/{$hostusername}/.ssh/id_rsa.pub {$home_path}/.ssh/
+# chmod og-rw {$home_path}/.ssh/id_rsa
 
 # dotfiles
-echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> {$home_path}/.ssh/config
-git clone git@github.com:Xixiao007/dotfiles.git {$home_path}/dotfiles
-eval {$home_path}/dotfiles/bootstrap.sh -f
+# echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> {$home_path}/.ssh/config
+# git clone git@github.com:Xixiao007/dotfiles.git {$home_path}/dotfiles
+# eval {$home_path}/dotfiles/bootstrap.sh -f
 
 # for java8
 sudo add-apt-repository ppa:webupd8team/java -y
