@@ -67,6 +67,12 @@ unzip pmd-bin-6.2.0.zip -d ${home_path}
 #git clone https://github.com/pyenv/pyenv.git ${home_path}/.pyenv
 #git clone https://github.com/pyenv/pyenv-virtualenv.git ${home_path}/.pyenv/plugins/pyenv-virtualenv
 
+#cumulusci
+sudo apt-get install python-setuptools -y
+sudo easy_install pip
+sudo apt-get install python-dev -y
+pip install cumulusci
+
 # cleaning folders
 cd ${home_path}
 mkdir projects
