@@ -59,9 +59,13 @@ sudo apt-get install libgtk2.0-0 libxss-dev libgconf-2-4 libasound2 -y
 sudo apt-get install ./vscode.deb -y
 code --install-extension Shan.code-settings-sync
 
+# pmd
+wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.2.0/pmd-bin-6.2.0.zip
+unzip pmd-bin-6.2.0.zip -d ${home_path}
+
 #pyenv
-git clone https://github.com/pyenv/pyenv.git ${home_path}/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git ${home_path}/.pyenv/plugins/pyenv-virtualenv
+#git clone https://github.com/pyenv/pyenv.git ${home_path}/.pyenv
+#git clone https://github.com/pyenv/pyenv-virtualenv.git ${home_path}/.pyenv/plugins/pyenv-virtualenv
 
 # cleaning folders
 cd ${home_path}

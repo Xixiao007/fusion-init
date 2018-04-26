@@ -52,7 +52,7 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 # fish post_actions
 fisher fzf
 fisher z
-fisher pyenv
+#fisher pyenv
 fisher fnm
 fnm 8
 npm install sfdx-cli --global
