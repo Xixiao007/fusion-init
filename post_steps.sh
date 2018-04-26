@@ -61,6 +61,11 @@ cd {$home_path}/dotfiles
 git remote rm origin
 git remote add origin git@github.com:Xixiao007/dotfiles.git
 
+# update vmware-tools
+git clone https://github.com/rasa/vmware-tools-patches.git
+cd vmware-tools-patches
+sudo ./patched-open-vm-tools.sh
+
 cd {$home_path}
 rm -Rf temp
 sudo reboot
