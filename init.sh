@@ -39,6 +39,18 @@ sudo apt-get install -f -y
 wget https://github.com/sharkdp/fd/releases/download/v6.3.0/fd-musl_6.3.0_amd64.deb
 sudo dpkg -i fd-musl*.deb
 
+# hub 2.3.0
+wget https://github.com/github/hub/releases/download/v2.3.0-pre10/hub-linux-amd64-2.3.0-pre10.tgz
+tar -xvzf hub-linux-amd64-2.3.0-pre10.tgz
+sudo mv hub-linux-amd64-2.3.0-pre10/bin/hub /usr/local/bin
+
+# tig
+sudo apt-get install libncurses5-dev -y
+git clone http://github.com/jonas/tig
+cd tig
+make
+make install
+
 # fish as default shell
 sudo usermod -s /usr/bin/fish ${username}
 
