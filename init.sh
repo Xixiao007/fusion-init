@@ -83,7 +83,7 @@ unzip pmd-bin-6.2.0.zip -d ${home_path}
 sudo apt-get install python-setuptools -y
 sudo easy_install pip
 sudo apt-get install python-dev -y
-pip install cumulusci
+sudo pip install cumulusci
 
 # cleaning folders
 cd ${home_path}
