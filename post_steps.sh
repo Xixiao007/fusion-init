@@ -38,10 +38,8 @@ sudo apt-get install open-vm-tools-desktop -y
 #sudo apt-get install oracle-java8-installer -y
 
 # font Consolas
-sudo apt-get install font-manager cabextract -y
-wget -q http://download.microsoft.com/download/E/6/7/E675FFFC-2A6D-4AB0-B3EB-27C9F8C8F696/PowerPointViewer.exe
-cabextract -L -F ppviewer.cab PowerPointViewer.exe
-cabextract ppviewer.cab
+sudo apt-get install font-manager -y
+wget https://github.com/tsenart/sight/raw/master/fonts/Consolas.ttf
 mkdir {$home_path}/.fonts
 mv CONSOL* {$home_path}/.fonts
 fc-cache -f -v
@@ -51,10 +49,10 @@ fc-cache -f -v
 
 # fish post_actions
 #fisher fzf
-fisher z
+fisher add jethrokuan/z
 #fisher pyenv
-fisher fnm
-fnm 10
+fisher add jorgebucaran/fish-nvm
+nvm use lts
 npm install sfdx-cli --global
 
 # change dotfies upstream
