@@ -9,8 +9,8 @@ mkdir -p {$home_path}/temp
 cd {$temp_path}
 
 # fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git /home/{$username}/.fzf
-eval /home/{$username}/.fzf/install
+#git clone --depth 1 https://github.com/junegunn/fzf.git /home/{$username}/.fzf
+#eval /home/{$username}/.fzf/install
 
 # vm tools
 sudo apt-get install open-vm-tools-desktop -y
@@ -47,14 +47,14 @@ mv CONSOL* {$home_path}/.fonts
 fc-cache -f -v
 
 # enable new keybinding for fzf
-set -U FZF_LEGACY_KEYBINDINGS 0
+#set -U FZF_LEGACY_KEYBINDINGS 0
 
 # fish post_actions
-fisher fzf
+#fisher fzf
 fisher z
 #fisher pyenv
 fisher fnm
-fnm 8
+fnm 10
 npm install sfdx-cli --global
 
 # change dotfies upstream
