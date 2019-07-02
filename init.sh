@@ -56,7 +56,7 @@ sudo usermod -s /usr/bin/fish ${username}
 
 
 # fishman
-curl -Lo ${home_path}/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
 # auto-login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
