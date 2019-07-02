@@ -72,8 +72,8 @@ sudo apt-get install ./vscode.deb -y
 code --install-extension Shan.code-settings-sync
 
 # pmd
-wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.2.0/pmd-bin-6.2.0.zip
-unzip pmd-bin-6.2.0.zip -d ${home_path}
+wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.16.0/pmd-bin-6.16.0.zip
+unzip pmd-bin-6.16.0.zip -d ${home_path}
 
 #pyenv
 #git clone https://github.com/pyenv/pyenv.git ${home_path}/.pyenv
