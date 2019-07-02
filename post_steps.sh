@@ -41,7 +41,7 @@ sudo apt-get install open-vm-tools-desktop -y
 sudo apt-get install font-manager -y
 wget https://github.com/tsenart/sight/raw/master/fonts/Consolas.ttf
 mkdir {$home_path}/.fonts
-mv CONSOL* {$home_path}/.fonts
+mv Consolas.ttf {$home_path}/.fonts
 fc-cache -f -v
 
 # enable new keybinding for fzf
@@ -56,9 +56,10 @@ nvm use lts
 npm install sfdx-cli --global
 
 # change dotfies upstream
+cd {$home_path}
+git clone https://github.com:Xixiao007/dotfiles.git
 cd {$home_path}/dotfiles
-git remote rm origin
-git remote add origin git@github.com:Xixiao007/dotfiles.git
+./bootstrap.sh
 
 # update vmware-tools
 git clone https://github.com/rasa/vmware-tools-patches.git
@@ -67,4 +68,4 @@ sudo ./patched-open-vm-tools.sh
 
 cd {$home_path}
 rm -Rf temp
-sudo reboot
+#sudo reboot
