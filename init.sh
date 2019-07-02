@@ -36,13 +36,13 @@ sudo dpkg -i google-chrome*.deb
 sudo apt-get install -f -y
 
 # fd
-wget https://github.com/sharkdp/fd/releases/download/v6.3.0/fd-musl_6.3.0_amd64.deb
-sudo dpkg -i fd-musl*.deb
+#wget https://github.com/sharkdp/fd/releases/download/v6.3.0/fd-musl_6.3.0_amd64.deb
+#sudo dpkg -i fd-musl*.deb
 
 # hub 2.3.0
-wget https://github.com/github/hub/releases/download/v2.3.0-pre10/hub-linux-amd64-2.3.0-pre10.tgz
-tar -xvzf hub-linux-amd64-2.3.0-pre10.tgz
-sudo mv hub-linux-amd64-2.3.0-pre10/bin/hub /usr/local/bin
+#wget https://github.com/github/hub/releases/download/v2.3.0-pre10/hub-linux-amd64-2.3.0-pre10.tgz
+#tar -xvzf hub-linux-amd64-2.3.0-pre10.tgz
+#sudo mv hub-linux-amd64-2.3.0-pre10/bin/hub /usr/local/bin
 
 # tig
 sudo apt-get install libncurses5-dev -y
@@ -80,10 +80,10 @@ unzip pmd-bin-6.2.0.zip -d ${home_path}
 #git clone https://github.com/pyenv/pyenv-virtualenv.git ${home_path}/.pyenv/plugins/pyenv-virtualenv
 
 #cumulusci
-sudo apt-get install python-setuptools -y
-sudo easy_install pip
-sudo apt-get install python-dev -y
-sudo pip install cumulusci
+#sudo apt-get install python-setuptools -y
+#sudo easy_install pip
+#sudo apt-get install python-dev -y
+#sudo pip install cumulusci
 
 # cleaning folders
 cd ${home_path}
