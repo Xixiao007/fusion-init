@@ -39,9 +39,8 @@ fc-cache -f -v
 #set -U FZF_LEGACY_KEYBINDINGS 0
 
 # fish post_actions
-#fisher fzf
+fisher add jethrokuan/fzf
 fisher add jethrokuan/z
-#fisher pyenv
 fisher add jorgebucaran/fish-nvm
 nvm use lts
 npm install sfdx-cli --global
