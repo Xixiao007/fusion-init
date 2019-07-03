@@ -28,14 +28,12 @@ sudo apt-get install open-vm-tools-desktop -y
 # git clone git@github.com:Xixiao007/dotfiles.git {$home_path}/dotfiles
 # eval {$home_path}/dotfiles/bootstrap.sh -f
 
-# for java8
-#sudo add-apt-repository ppa:webupd8team/java -y
-#sudo apt-get update -y
-#echo debconf shared/accepted-oracle-license-v1-1 select true | \
-#  sudo debconf-set-selections
-#echo debconf shared/accepted-oracle-license-v1-1 seen true | \
-#  sudo debconf-set-selections
-#sudo apt-get install oracle-java8-installer -y
+# for java11
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt-get update
+# Manual download jdk11.tar from oracle site and 
+# sudo cp jdk-11.0.3_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/
+#sudo apt install oracle-java11-installer-local
 
 # font Consolas
 sudo apt-get install font-manager -y
