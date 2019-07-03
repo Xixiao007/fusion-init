@@ -28,13 +28,6 @@ sudo apt-get install open-vm-tools-desktop -y
 # git clone git@github.com:Xixiao007/dotfiles.git {$home_path}/dotfiles
 # eval {$home_path}/dotfiles/bootstrap.sh -f
 
-# for java11
-sudo add-apt-repository ppa:linuxuprising/java
-sudo apt-get update
-# Manual download jdk11.tar from oracle site and 
-# sudo cp jdk-11.0.3_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/
-#sudo apt install oracle-java11-installer-local
-
 # font Consolas
 sudo apt-get install font-manager -y
 wget https://github.com/tsenart/sight/raw/master/fonts/Consolas.ttf
@@ -53,16 +46,24 @@ fisher add jorgebucaran/fish-nvm
 nvm use lts
 npm install sfdx-cli --global
 
-# change dotfies upstream
-cd {$home_path}
-git clone https://github.com:Xixiao007/dotfiles.git
-cd {$home_path}/dotfiles
-./bootstrap.sh
-
 # update vmware-tools
 git clone https://github.com/rasa/vmware-tools-patches.git
 cd vmware-tools-patches
 sudo ./patched-open-vm-tools.sh
+
+# MANUAL STEP for java11
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt-get update
+# Manual download jdk11.tar from oracle site and 
+# sudo cp jdk-11.0.3_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/
+# sudo apt install oracle-java11-installer-local
+
+# MANUAL STEP for dotfiles
+cd {$home_path}
+git clone https://github.com:Xixiao007/dotfiles.git
+cd {$home_path}/dotfiles
+# Manual run ./bootstrap.sh
+
 
 cd {$home_path}
 rm -Rf temp
