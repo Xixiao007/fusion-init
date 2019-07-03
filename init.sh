@@ -28,6 +28,8 @@ sudo apt-get update -y
 # install various tools
 sudo apt-get install curl alsa-utils enpass unzip vim tree rxvt-unicode fish -y
 sudo apt-get install i3 feh scrot conky-all xinit x11-xserver-utils -y
+git clone --depth 1 https://github.com/junegunn/fzf.git ${home_path}/.fzf
+${home_path}/.fzf/install
 
 # chrome
 sudo apt-get install libxss1 libappindicator1 libindicator7 -y
