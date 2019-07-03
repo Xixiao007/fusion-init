@@ -60,7 +60,7 @@ sudo apt-get update
 
 # MANUAL STEP for dotfiles
 cd {$home_path}
-git clone https://github.com:Xixiao007/dotfiles.git
+git clone https://github.com/Xixiao007/dotfiles.git
 cd {$home_path}/dotfiles
 # Manual run ./bootstrap.sh
 
